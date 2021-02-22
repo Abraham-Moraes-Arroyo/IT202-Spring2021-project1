@@ -1,2 +1,1 @@
-# IT202-Spring2021-project1
-IT 202 Project for Spring of 2021
+For this project,i built a Single-Page App that allows users to search for Chicago City-Owned Land Inventory data https://dev.socrata.com/foundry/data.cityofchicago.org/aksk-kvfp 
