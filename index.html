@@ -1,114 +1,76 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-	 crossorigin="anonymous">
-
-	<title>Project One</title>
-
-	<!-- Here is where I am going to have the class so that when the user clicks on something on the nav bar they are able to see what they clicked on-->
-	<style>
-		.screen {
-			display: None;
-		}
-	</style>
-
-
-
-</head>
-
-<body>
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html">Land Inventory</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a data-screen="home" class="nav-link active" aria-current="page">Home</a>
-          <!--The actual screen-->
-        <div class="screen">
-          <p>This is the home page 
-            </p>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a data-screen="search" class="nav-link active" aria-current="page" >Search</a>
-          <!--The actual screen-->
-        <div class="screen">
-          <p>This is the search screen
-            </p>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a data-screen="results" class="nav-link active" aria-current="page" >Results</a>
-          <!--The actual screen-->
-        <div class="screen">
-          <p>This is the results screen 
-            </p>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a data-screen="map" class="nav-link active" aria-current="page" >Map</a>
-          <!--The actual screen-->
-        <div class="screen">
-          <p>This is the map screen 
-            </p>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a data-screen="about" class="nav-link active" aria-current="page" >About</a>
-          <!--The actual screen-->
-        <div class="screen">
-          <p>This app was created by Abraham Morales Arroyo 
-            </p>
-          </div>
-          
-        </li>
-      </ul>
+    <title>Hello, world!</title>
+    <!--This makes sure that there screens are not seen from the start -->
+    <style>
+      .screen{display:none;}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Land stuff or something</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav"> <!--Think of that as your topnav -->
+          <a data-screen="home" class="nav-item nav-link" >Home</a>
+          <a data-screen="search" class="nav-item nav-link" >Search</a>
+          <a data-screen="results" class="nav-item nav-link" >Results</a>
+          <a data-screen="map" class="nav-item nav-link" >Map</a> 
+          <a data-screen="about" class="nav-item nav-link" >About</a>       
+        </div>
+      </div>
+      <!-- the original screens where placed here-->
+    </nav>
+    <!--Here is where I am going to put the screens -->
+    <div id="content">
+      <div class="screen" id="home">Home page</div>
+      <div class="screen" id="search">Search page</div>
+      <div class="screen" id="results">Results page</div>
+      <div class="screen" id="map">Here is where the map is going to be</div>
+      <div class="screen" id="about">This is the about page</div>
     </div>
-  </div>
-  <script>
-      
-       let navAnchors = document.querySelectorAll("div#container-fluid a")
-       
-       navAnchors.forEach((anchor) => {
-         anchor.addEventListener("click", (event) => {
-           //hide all screens first
-           document.querySelectorAll(".screen").forEach((screen) => {
-             screen.style.display= "none";
-           });
-           //read data screen attribute
-           let screen = event.target.getAttribute("data-screen");
-           //find revelant screen
-           let targetScreen=document.querySelector("#" + screen);
-           //Show it 
-           targetScreen.style.display = "block";
-         })
-       })
-        </script>
-</nav>
+    <!-- End of content -->
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Here is where the typescript is going to be, that makes the screens visible-->
+      <script>
+        // This will make sure that the home screen is always being shown 
+        document.querySelector("#home").style.display= "block";
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        let navAnchors= document.querySelectorAll("div#navbarNavAltMarkup a")
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    -->
-    <!--Here is where the event handlers are going to go -->
-      
+        navAnchors.forEach( (anchor) => {
+          anchor.addEventListener("click", (event) => {
+
+            //hides all the screens first
+            document.querySelectorAll(".screen").forEach( (screen) => {
+              screen.style.display = "none";
+            });
+            //read data screen attribute  
+            let screen = event.target.getAttribute("data-screen");
+
+            //find relevant screen
+            let targetScreen= document.querySelector("#" + screen);
+
+            //show it 
+            targetScreen.style.display= "block";
+          })
+        })
+      </script>
   </body>
 </html>
