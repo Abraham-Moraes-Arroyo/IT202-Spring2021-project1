@@ -8,11 +8,21 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Project 1 IT 202 Spring 2021</title>
     <!--This makes sure that there screens are not seen from the start -->
     <style>
       .screen{display:none;}
     </style>
+    <!--this is for the map page-->
+    <style type="text/css">
+              /* Set the size of the div element that contains the map */
+              #map {
+                height: 400px;
+                /* The height is 400 pixels */
+                width: 100%;
+                /* The width is the width of the web page */
+              }
+      </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -78,11 +88,42 @@
       </div>
 
       <!-- The results page -->
-      <div class="screen" id="results">Results page</div>
+      <div class="screen" id="results">Results page
+
+
+        
+      </div>
 
 
       <!-- The Map page -->
-      <div class="screen" id="map">Here is where the map is going to be</div>
+      <div class="screen" id="map">
+        <center>
+          <h1>MAP</h1>
+            
+              <script>
+                    // Initialize and add the map
+                    function initMap() {
+                      // The location of Uluru
+                      const chicago = { lat: 41.8696, lng: -87.6496 };
+                      // The map, centered at Uluru
+                      const map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 4,
+                        center: chicago,
+                      });
+                      // The marker, positioned at Uluru
+                      const marker = new google.maps.Marker({
+                        position: chicago,
+                        map: map,
+                      });
+                    }
+                </script>
+                  <h3>Google map pointing to UIC</h3>
+                    <!--The div element for the map -->
+                    <div id="map"></div>
+                      
+        </center>
+
+      </div>
 
 
       <!-- The about page -->
@@ -125,5 +166,7 @@
           })
         })
       </script>
+      <!-- This part is for the map screen -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgXZFFHQ90wVb39LUB9h1fYJZL8a_KVkw&callback=initMap&libraries=&v=weekly" async></script>
   </body>
 </html>
