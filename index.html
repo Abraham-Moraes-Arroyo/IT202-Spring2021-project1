@@ -88,9 +88,30 @@
       </div>
 
       <!-- The results page -->
-      <div class="screen" id="results">Results page
+      <div class="screen" id="results">
+        
+        <h1>Results page</h1>
+          <!--
+            Below is the main code for the card
+            perhaps change the text from the page in order
+            to have the reader/ user understand how to 'read'
+            their results
+          -->
+            <div class="container">
 
-
+              <div class="row">
+                <div class="card" >
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Here is where  the cards are populated
+        -->
         
       </div>
 
@@ -168,5 +189,16 @@
       </script>
       <!-- This part is for the map screen -->
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgXZFFHQ90wVb39LUB9h1fYJZL8a_KVkw&callback=initMap&libraries=&v=weekly" async></script>
+
+      <!-- This for the results page, where the cards are populated-->
+        <!--Here is where I make the fetch request using the fetch url method-->
+        <script>
+          let  url= "https://data.cityofchicago.org/resource/aksk-kvfp.json"
+          fetch (url)
+            .then ( ( response ) => { return response.json() })
+            .then ( (data) => {
+              console.log(data);
+            })
+        </script>
   </body>
 </html>
