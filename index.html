@@ -32,15 +32,15 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Land stuff or something</a>
+      <a class="navbar-brand" href="index.html">Land Collection Data</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav"> <!--Think of that as your topnav -->
-          <a data-screen="home" class="nav-item nav-link" >Home</a>
-          <a data-screen="search" class="nav-item nav-link" >Search</a>
-          <a data-screen="results" class="nav-item nav-link" >Results</a>
+          <a data-screen="home" class="nav-item nav-link" >Home/Instructions</a>
+          <a data-screen="form" class="nav-item nav-link" >Form</a>
+          <a data-screen="data" class="nav-item nav-link" >Data</a>
           <a data-screen="map" class="nav-item nav-link" >Map</a> 
           <a data-screen="about" class="nav-item nav-link" >About</a>       
         </div>
@@ -58,8 +58,8 @@
               The Home Page 
             </div>
               <div class="card-body">
-                <h5 class="card-title">Goal</h5>
-                  <p class="card-text">For this project, I built a Single-Page App that allows users to search for Chicago City-Owned Land Inventory data.</p>
+                <h5 class="card-title">Instructions</h5>
+                  <p class="card-text">In order to use this app propertly you fist need to go to the search tab and make enter the number of the ward that you plan to search for. Then you need to go to the results tab in order to see the results of your search. If you want to see the locations of your results you need to look at the Map section, and if you still want to explore more feel free to check the About the tab. :)</p>
                     <a href="https://dev.socrata.com/foundry/data.cityofchicago.org/aksk-kvfp" class="btn btn-primary">LINK</a>
                 </div>
         </div>
@@ -67,7 +67,7 @@
       </div>
 
       <!--The Search Page -->
-      <div class="screen" id="search">
+      <div class="screen" id="form">
         <center>
           <div class="card w-75">
             <div class="card-body">
@@ -86,9 +86,13 @@
       </div>
 
       <!-- The results page -->
-      <div class="screen" id="results">
-        
+      <div class="screen" id="data">
+        <center>
         <h1>Results page</h1>
+          <div class="alert alert-primary" role="alert">
+            New Search Results Appear Below Go Check Them Out!!!
+          </div>
+        </center>
           <!--
             Below is the main code for the card
             perhaps change the text from the page in order
@@ -152,11 +156,15 @@
           Wow you took time to see who made the app?!! My hat's off to you
         </div>
           <center>
+            <h5 class="card-title">Goal</h5>
+                  <p class="card-text">For this project, I built a Single-Page App that allows users to search for Chicago City-Owned Land Inventory data. I needed to use an app shell model, Bootstrap for all of the UI elements, and have 5 screens, that consist of: Home/Instruction, Form, Data, Map, and a About page.</p>
             <div class="card" style="width: 18rem;">
               
               <div class="card-body">
                 <h5 class="card-title">Abraham Morales Arroyo</h5>
+                
                 <p class="card-text">He is a softmore at the University of Illinois at UIC and he is currently enrolled in IT 202. Want to get to know me better? Click on my personal page to do so.</p>
+                
                 <a href="https://abrahamof606.github.io/" class="btn btn-primary">Personal Page</a>
               </div>
             </div>
