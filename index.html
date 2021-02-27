@@ -79,22 +79,7 @@
                   
 
               </form>
-              <button  id= "searchButton" class="btn btn-outline-success">Search for Ward Numbers</button>
-              <!-- <p class="card-text"></p>
-              <form>
-              <p class="card-text">Enter the Community Name</p>
-                <input class="form-control me-2" type="search" placeholder="i.e) EAST GARFIELD PARK (Yes in all caps)" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search Community Names</button>
-               </form>
-            <p class="card-text"></p>
-              <form>
-              <p class="card-text">Enter the Address</p>
-                <input class="form-control me-2" type="search" placeholder="i.e) 3500 W CARROLL AVE (Again in all caps, you can do it)" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search for address</button>
-
-              </form>   -->
-                        
-              
+              <button  id= "searchButton" class="btn btn-outline-success">Click here to search for Ward Numbers</button>  
             </div>
           </div>
         </center>
@@ -118,7 +103,7 @@
                     <h5 class="card-title">Card title</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
+                    <p2 class="card-text2">Some quick example text to build on the card title and make up the bulk of the card's content.</p2>
               </div> 
             </div>
           </div>
@@ -246,8 +231,17 @@
               //this is for the adding the name of the are to the card
               let h5 = clone.querySelector("h5.card-title")
               h5.innerText = item.community_area_name;
+              //this is for the pin part of the card
+              let h6 = clone.querySelector("h6.card-subtitle")//I did a change here
+              h6.innerText= item.pin;
+              //this is for the address part of the card
+              let p =clone.querySelector("p.card-text")
+              p.innerText=item.address;
+              //this is for the sq_ft part of the card requirement
+              let p2 =clone.querySelector("p2.card-text2")
+              p2.innerText=item.sq_ft;
 
-              //line 214 gets rid of the normal template. We don't need to see that one
+              //this is to keep the results sections accurate by deleting the cards that were there before.
               clone.classList.remove("template");
               clone.classList.add("ward_card")
               template.parentElement.append(clone);
@@ -257,21 +251,7 @@
           })
           });
 
-          // fetch (url)
-          //   .then ( ( response ) => { return response.json() })
-          //   .then ( (data) => {
-          //     data.forEach( (item) => {
-          //       let clone=template.cloneNode(true);
-          //       //this is for the adding the name of the are to the card
-          //       let h5 = clone.querySelector("h5.card-title")
-          //       h5.innerText = item.community_area_name;
-          //       //line 214 gets rid of the normal template. We don't need to see that one
-          //       clone.classList.remove("template");
-          //       template.parentElement.append(clone);
-                
-          //     })
-
-          //   })
+        
 
         </script>
   </body>
