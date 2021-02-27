@@ -74,11 +74,12 @@
               <h5 class="card-title">Search!</h5>
               <p class="card-text">Enter ward Number</p>
               <form class="d-flex" >
-                <input class="form-control me-2" id="ward" type="search" placeholder="i.e) 28 (Just the number please)" aria-label="Search">
+                <input class="form-control me-2" id="ward" type="search" placeholder="i.e) 28 (Just the number please)" >
                   
-                  <button  id= "search" class="btn btn-outline-success" type="submit">Search for Ward Numbers</button>
+                  
 
               </form>
+              <button  id= "searchButton" class="btn btn-outline-success">Search for Ward Numbers</button>
               <!-- <p class="card-text"></p>
               <form>
               <p class="card-text">Enter the Community Name</p>
@@ -133,13 +134,14 @@
         <center>
           <h1>MAP</h1>
             
-              <script>
+              <script> // Move it to the top, before the closing body tag
                     // Initialize and add the map
+                    let map;//creating a variable (global)
                     function initMap() {
                       // The location of Uluru
                       const chicago = { lat: 41.8696, lng: -87.6496 };
                       // The map, centered at Uluru
-                      const map = new google.maps.Map(document.getElementById("map"), {
+                      map = new google.maps.Map(document.getElementById("map"), {
                         zoom: 4,
                         center: chicago,
                       });
@@ -220,29 +222,34 @@
           let template= document.querySelector(".template");
 
           //This is for the search box method
-          document.querySelector("#search").addEventListener( "click", (event) => {
+          document.querySelector("#searchButton").addEventListener( "click", (event) => {
+            // console.log("search click")
             //should remove the cards so there is no card residue
-            document.querySelectorAll("ward_card").forEach( (node) => {
+            document.querySelectorAll(".ward_card").forEach( (node) => { // here I changed ward_card
+              // console.log("removing node")
               node.remove()
             });
 
             let type= document.querySelector("input").value;
  
             // I am not so sure on this part since I never had a ?--- for getting more narrow witht eh data
-            let url = "https://data.cityofchicago.org/resource/aksk-kvfp.json" + "?ward=25" + type;
-
+            let url = "https://data.cityofchicago.org/resource/aksk-kvfp.json" + "?ward=" + type;
+           // console.log(url)
 
         fetch (url)
           .then ( ( response ) => { return response.json() })
           .then ( (data) => {
+            // console.log(data)
             data.forEach( (item) => {
+              // console.log(item)
               let clone=template.cloneNode(true);
               //this is for the adding the name of the are to the card
               let h5 = clone.querySelector("h5.card-title")
               h5.innerText = item.community_area_name;
+
               //line 214 gets rid of the normal template. We don't need to see that one
               clone.classList.remove("template");
-              clone.classList.add(".ward_card")
+              clone.classList.add("ward_card")
               template.parentElement.append(clone);
               
             })
